@@ -1,4 +1,4 @@
-
+import os
 def mostrar_tablero(palabra, letras_adivinadas):
     tablero = ""
     for letra in palabra:
@@ -8,11 +8,12 @@ def mostrar_tablero(palabra, letras_adivinadas):
             tablero += "_ "
     return tablero
 
-def juego(nombre_usuario,palabra_Azar):
+def juego(username,palabra_Azar):
+    os.system("clear")
     letras_adivinadas = []
     intentos = 6
 
-    print("¡Bienvenido al juego de ahorcado",nombre_usuario,"!")
+    print("¡Bienvenido al juego de ahorcado",username,"!")
     print(mostrar_tablero(palabra_Azar, letras_adivinadas))
 
     while True:
@@ -28,6 +29,7 @@ def juego(nombre_usuario,palabra_Azar):
             intentos -= 1
             print(f"La letra '{letra}' no está en la palabra. Te quedan {intentos} intentos.")
             if intentos == 0:
+                os.system("clear")
                 print("¡Has perdido! La palabra secreta era:", palabra_Azar)
                 return False
                 break
@@ -36,6 +38,7 @@ def juego(nombre_usuario,palabra_Azar):
         print(tablero)
 
         if "_" not in tablero:
+            os.system("clear")
             print("*"*40,"\n ¡Felicidades! ¡Has adivinado la palabra!\n","*"*40)
             return tablero
             break
