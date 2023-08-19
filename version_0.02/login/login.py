@@ -1,6 +1,7 @@
 import pwinput
 from juego.menu import juego_Menu
 import os
+from recursos.score import *
 
 class Usuario:
     def __init__(self, username, password):
@@ -31,6 +32,7 @@ def acceso():
 
             match verificar_credenciales(username, password):
                 case True:
+                    score_Escribir(username)
                     juego_Menu(username)
                     
                 case False:

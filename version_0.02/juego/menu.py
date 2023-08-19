@@ -1,6 +1,7 @@
 import random
 from recursos.palabras import *
 from recursos.juego import juego
+from recursos.score import *
 import os
 import time
 
@@ -12,6 +13,9 @@ tablero_Dificil = []
 def juego_Menu(username):
     while True:
         os.system("clear")
+        """tablero_Facil = score_Leer(username,carpeta=facil)
+        tablero_Medio = score_Leer(username,carpeta=medio)
+        tablero_Dificil = score_Leer(username,carpeta=dificil)"""
         resp = input("*"*53+"\n* Bienvenido al juego del ahorcado este es el menu: *\n"+"*"*53+"\n1.-  Nivel Facil\n2.-  Nivel Medio\n3.-  Nivel Dificil\n4.-  Tablero\n5.-  Menu principal\n")
         match resp:
             case "1":
@@ -37,11 +41,12 @@ def juego_Menu(username):
                     time.sleep(4)
             case "4":
                 os.system("clear")
-                print("Este sera el tablero facil:")
+                print(f"{username} estas son las palabras que has adivinado:")
+                print("Facil:")
                 print(tablero_Facil)
-                print("Este sera el tablero Medio:")
+                print("Medio:")
                 print(tablero_Medio)
-                print("Este sera el tablero Medio:")
+                print("Dicifil:")
                 print(tablero_Dificil)
                 time.sleep(4)
             case "5":
