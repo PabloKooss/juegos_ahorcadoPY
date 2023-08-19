@@ -36,6 +36,6 @@ def juego(nombre_usuario,palabra_Azar):
         print(tablero)
 
         if "_" not in tablero:
-            print("¡Felicidades! ¡Has adivinado la palabra!")
+            print("*"*40,"\n ¡Felicidades! ¡Has adivinado la palabra!\n","*"*40)
             return tablero
             break
